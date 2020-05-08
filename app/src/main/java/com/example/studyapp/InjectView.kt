@@ -29,17 +29,23 @@ object InjectUtils {
                     eventAnnotation?.let {
                         val listenerType = eventAnnotation.listenerType
                         val listenerSetter = eventAnnotation.listenerSetter
-                        val method = annotationType.getDeclaredMethod("values")
-                        val values: IntArray? = method.invoke(annotation) as IntArray
-                        method.isAccessible = true
-                        if (values?.isNotEmpty() == true) {
-                            proxyOnClickListener(
-                                activity,
-                                function,
-                                values,
-                                listenerType,
-                                listenerSetter
-                            )
+                        try {
+                            val method = annotationType.getDeclaredMethod("values")
+                            val values: IntArray? = method.invoke(annotation) as IntArray
+                            method.isAccessible = true
+                            if (values?.isNotEmpty() == true) {
+                                proxyOnClickListener(
+                                    activity,
+                                    function,
+                                    values,
+                                    listenerType,
+                                    listenerSetter
+                                )
+                            }
+                        }catch (e:NoSuchMethodException){
+                            e.printStackTrace()
+                        }catch (e:SecurityException){
+                            e.printStackTrace()
                         }
                     }
                 }

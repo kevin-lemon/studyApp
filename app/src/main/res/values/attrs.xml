@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FaceShadeView">
+        <attr name="shade_color" format="color" />
+        <attr name="count_down_time" format="integer"/>
+        <attr name="progress_margin" format="dimension"/>
+        <attr name="progress_color" format="color"/>
+        <attr name="show_progress" format="boolean"/>
+        <attr name="success_icon" format="reference"/>
+        <attr name="fail_icon" format="reference"/>
+        <attr name="icon_width" format="dimension"/>
+        <attr name="icon_height" format="dimension"/>
+        <attr name="state_text_color" format="color"/>
+        <attr name="state_text_size" format="dimension"/>
+        <attr name="state_circle_shape_color" format="color"/>
+        <attr name="state_text_success" format="string"/>
+        <attr name="state_text_fail" format="string"/>
+    </declare-styleable>
+</resources>

@@ -10,7 +10,6 @@ import android.util.AttributeSet
 import android.view.View
 import android.view.animation.LinearInterpolator
 import androidx.core.graphics.drawable.toBitmap
-import com.asto.aioface.R
 
 
 /**
